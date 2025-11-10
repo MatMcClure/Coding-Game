@@ -1,0 +1,13 @@
+.App {
+  color: black;
+}
+
+h1, p {
+  text-align: center;
+}
+
+button {
+  display: flex;
+  margin: 0;
+  align-items: center;
+}

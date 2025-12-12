@@ -24,10 +24,11 @@ export const levels: Level[] = [
     correctAnswer: "return a + b;",
   },
   {
-    id: 2,
+    id: 3,
     difficulty: "Hard",
     question: "Fix the function so it returns the sum of two numbers:",
     codeTemplate: "function add(a, b) { return a - b; // fix me }",
     correctAnswer: "return a + b;",
   },
+
 ];

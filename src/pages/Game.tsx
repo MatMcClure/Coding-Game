@@ -5,7 +5,11 @@ import { LevelComponent } from "../components/LevelTemp";
 
 export const Game: React.FC = () => {
   const { difficulty } = useParams<{ difficulty: string }>();
-  const filteredLevels = levels.filter(l => l.difficulty === difficulty);
+
+  const filteredLevels = levels.filter(
+    l => l.difficulty.toLowerCase() === difficulty?.toLowerCase()
+  );
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const currentLevel = filteredLevels[currentIndex];
@@ -23,8 +27,10 @@ export const Game: React.FC = () => {
   return (
     <div className="game">
       <h2>{difficulty?.toUpperCase()} Mode</h2>
-      {currentLevel && (
+      {currentLevel ? (
         <LevelComponent data={currentLevel} onSubmit={handleResult} />
+      ) : (
+        <p>No levels available for this difficulty.</p>
       )}
     </div>
   );
